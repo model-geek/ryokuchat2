@@ -9,6 +9,16 @@ import { type LoginState, login } from "../actions";
 
 const initialState: LoginState = {};
 
+/**
+ * メール/パスワードのログインフォーム
+ *
+ * @remarks
+ * - {@link login} Server Action を `useActionState` で呼び出す
+ * - バリデーションエラーはフォーム内にインライン表示
+ * - 送信中はボタンを無効化し「ログイン中...」を表示
+ *
+ * @public
+ */
 export function LoginForm() {
   const [state, formAction, pending] = useActionState(login, initialState);
 

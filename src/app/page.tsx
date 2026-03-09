@@ -1,5 +1,6 @@
 import { css } from "../../styled-system/css";
 
+/** トップページ */
 export default function Home() {
   return (
     <div

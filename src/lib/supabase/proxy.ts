@@ -1,6 +1,20 @@
 import { createServerClient } from "@supabase/ssr";
 import { type NextRequest, NextResponse } from "next/server";
 
+/**
+ * Supabase セッションを更新し、認証状態に応じてリダイレクトする
+ *
+ * @remarks
+ * {@link proxy} から呼び出される。リクエストごとにセッショントークンをリフレッシュし、
+ * 以下のリダイレクトルールを適用する:
+ * - **未認証 & `/login` 以外** → `/login` にリダイレクト
+ * - **認証済み & `/login`** → `/` にリダイレクト
+ *
+ * @param request - Next.js のリクエストオブジェクト
+ * @returns セッション Cookie を更新済みのレスポンス、またはリダイレクトレスポンス
+ *
+ * @internal
+ */
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request });
 

@@ -1,6 +1,12 @@
 import { css } from "../../../styled-system/css";
 import { LoginForm } from "@/features/auth/components/login-form";
 
+/**
+ * ログインページ
+ *
+ * @remarks
+ * {@link LoginForm} を中央配置で表示する。
+ */
 export default function LoginPage() {
   return (
     <div

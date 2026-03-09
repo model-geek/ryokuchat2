@@ -1,4 +1,6 @@
 import { css } from "../../styled-system/css";
+import { logout } from "@/features/auth/actions";
+import { Button } from "@/components/ui/button";
 
 /** トップページ */
 export default function Home() {
@@ -6,8 +8,10 @@ export default function Home() {
     <div
       className={css({
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        gap: "6",
         minH: "screen",
       })}
     >
@@ -19,6 +23,11 @@ export default function Home() {
       >
         RyokuChat
       </h1>
+      <form action={logout}>
+        <Button type="submit" variant="outline">
+          ログアウト
+        </Button>
+      </form>
     </div>
   );
 }

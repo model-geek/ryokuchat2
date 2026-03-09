@@ -3,11 +3,8 @@
 ## セットアップ
 
 ```bash
-# 依存関係のインストール
+# 依存関係のインストール (prepare で panda codegen も実行される)
 bun install
-
-# Panda CSS のコード生成
-bun run prepare
 
 # 環境変数の取得 (Vercel にリンク済みであること)
 vercel env pull .env.local
